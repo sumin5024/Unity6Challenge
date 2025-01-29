@@ -71,8 +71,8 @@ public class GameManager : MonoBehaviour
         {
             return 5f;
         }
-        float speed = 6f + (0.5f * Mathf.FloorToInt(CalculateScore() / 10f));
-        return Mathf.Min(speed, 25f);
+        float speed = 8f + (0.5f * Mathf.FloorToInt(CalculateScore() / 10f));
+        return Mathf.Min(speed, 40f);
     }
 
     void Update()
@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
             EnemySpawner.SetActive(false);
             FoodSpawner.SetActive(false);
             GoldenSpawner.SetActive(false);
+            SaveHighScore();
             DeadUI.SetActive(true);
             state = GameState.Dead;
         }
