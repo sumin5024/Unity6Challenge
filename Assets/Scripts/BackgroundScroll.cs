@@ -9,16 +9,8 @@ public class BackgroundScroll : MonoBehaviour
     [Header("References")]
     public MeshRenderer meshrenderer;
 
-    void Start()
-    {
-        
-    }
-
-
-    
-
     void Update()
     {
-        meshrenderer.material.mainTextureOffset += new Vector2(scrollSpeed * Time.deltaTime, 0);
+        meshrenderer.material.mainTextureOffset += new Vector2(scrollSpeed * GameManager.instance.CalculateGameSpeed() / 20 * Time.deltaTime, 0);
     }
 }
